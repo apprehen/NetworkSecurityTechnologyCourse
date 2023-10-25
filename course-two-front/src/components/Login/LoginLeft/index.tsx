@@ -3,9 +3,11 @@ import AvaterShow from './AvaterShow'
 import Search from './Search'
 import ChatSetting from './ChatSetting'
 import style from './index.module.css'
+import useUserInfo from '@/store/userInfo'
 const LoginLeft: React.FC = () => {
   const [currentId, setCurrentId] = useState('')
-  const data = new Array(5).fill(1)
+  const data = new Array(2).fill(1)
+  const { getChatName } = useUserInfo()
   const changeShow = (id: string) => {
     console.log('changeShow', id)
     // 更改actived
@@ -39,6 +41,7 @@ const LoginLeft: React.FC = () => {
                 changeShow={changeShow}
                 actived={currentId === index.toString()}
                 id={index.toString()}
+                chatName={getChatName()}
               ></AvaterShow>
             </div>
           )

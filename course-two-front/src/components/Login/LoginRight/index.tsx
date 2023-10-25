@@ -1,8 +1,8 @@
 import React from 'react'
 import Top from './Top'
-import Window from './Window'
 import Bottom from './Bottom'
 import style from './index.module.css'
+import WebSocketMessage from './WebSocketMessage'
 const LoginRight: React.FC = () => {
   return (
     <div
@@ -17,7 +17,7 @@ const LoginRight: React.FC = () => {
         <Top></Top>
       </div>
       <div className={style.chat_right_middle} id="window">
-        <Window></Window>
+        <WebSocketMessage></WebSocketMessage>
       </div>
       <div className={style.chat_right_bottom}>
         <Bottom></Bottom>

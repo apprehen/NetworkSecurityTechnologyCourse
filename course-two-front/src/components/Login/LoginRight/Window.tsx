@@ -1,20 +1,10 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect } from 'react'
 import useUserInfo from '@/store/userInfo'
-const Window: React.FC = () => {
-  const { getMessages } = useUserInfo()
-  const [socket, setSocket] = useState<any>(null)
-  const [messages, setMessages] = React.useState('')
-  useEffect(() => {
-    const socket = new WebSocket(
-      'ws://6dafdcce.r3.cpolar.cn/connect?userId=DragoKing'
-    )
-    // setSocket(newSocket)
-    socket.addEventListener('message', (event) => {
-      const message = event.data
-      console.log('接收到消息', message)
-      setMessages((messages) => messages.concat(message))
-    })
-  }, [])
+interface IProps {
+  messages: any
+}
+const Window: React.FC<IProps> = (props) => {
+  const { getMessages, setMessages, chatMessages } = useUserInfo()
   useEffect(() => {
     // 滑动到底部
     const dom = document.getElementById('window')
@@ -24,6 +14,7 @@ const Window: React.FC = () => {
       top: dom.scrollHeight + 100
     })
   }, [getMessages()])
+  // 接受消息不使用useEffect
   return (
     <div
       style={{
@@ -31,7 +22,6 @@ const Window: React.FC = () => {
         height: '100%'
       }}
     >
-      {messages}
       {getMessages().map((item: any, index: any) => {
         return (
           <div

@@ -10,15 +10,15 @@ const Bottom: React.FC = () => {
     // 获得输入框的值
     if (value === '') return
     // 发送消息
-    setMessages({
-      type: 'send',
-      content: value,
-      time: new Date().getTime(),
-      isMe: true
-    })
     try {
       const res = await postMessage(name, chatName, value)
       const res2 = await listSession(name)
+      setMessages({
+        type: 'send',
+        content: value,
+        time: new Date().getTime(),
+        isMe: true
+      })
       console.log('发送消息成功', res, res2)
     } catch (e) {
       console.log(e)

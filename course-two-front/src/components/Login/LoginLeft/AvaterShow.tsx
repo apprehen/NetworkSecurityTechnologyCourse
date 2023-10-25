@@ -5,6 +5,7 @@ interface IProps {
   changeShow: (id: string) => void
   id: string
   actived: boolean
+  chatName: string
 }
 const AvaterShow: React.FC<IProps> = (props: IProps) => {
   const clickAvaterShow = () => {
@@ -19,8 +20,8 @@ const AvaterShow: React.FC<IProps> = (props: IProps) => {
       }
       onClick={clickAvaterShow}
     >
-      <Avatar size="4" radius="full" fallback={'月晕'} />
-      <div className={style.avater_title}>月晕</div>
+      <Avatar size="4" radius="full" fallback={props.chatName.slice(0, 1)} />
+      <div className={style.avater_title}>{props.chatName}</div>
     </div>
   )
 }

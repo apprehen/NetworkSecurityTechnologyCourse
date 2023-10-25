@@ -1,6 +1,6 @@
 import axios from 'axios'
 import { envConfig } from './config'
-const { serverUrl } = envConfig['development']
+const { serverUrl } = envConfig['production']
 
 // 自定义axios
 const api = axios.create({

@@ -1,0 +1,30 @@
+.chat_right_top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #e6e6e6;
+}
+
+.chat_right_middle {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  overflow-y: scroll;
+  /* 去除滚动条样式 */
+  scrollbar-width: none;
+  /* Firefox */
+  scrollbar-color: transparent transparent;
+  /* Chrome */
+  overflow-x: hidden;
+  padding: 5px 0px;
+  box-sizing: border-box;
+  margin-bottom: 5px;
+  margin-top: 5px;
+}
+::-webkit-scrollbar {
+  display: none;
+}
+
+.chat_right_bottom {
+  height: 22%;
+}

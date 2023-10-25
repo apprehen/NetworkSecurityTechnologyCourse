@@ -1,0 +1,26 @@
+.login_Wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 70%;
+  height: 70vh;
+  border-radius: 15px;
+  background-color: #ccc;
+}
+.login_Wrapper .login_left {
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 15px;
+  width: 30%;
+  height: 100%;
+  box-sizing: border-box;
+  border-right: 2px solid #ccc;
+}
+.login_Wrapper .login_right {
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+  width: 70%;
+  height: 100%;
+  border-left: 2px solid #999;
+  box-sizing: border-box;
+  padding-right: 2px;
+}
